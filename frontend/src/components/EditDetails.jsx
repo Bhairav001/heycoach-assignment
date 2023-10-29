@@ -39,16 +39,6 @@ function EditDetails({ element }) {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    if (formData.genre == "") {
-      toast({
-        title: "Please select Restaurant type",
-        status: "warning",
-        position: "top-center",
-        duration: 2000,
-        isClosable: true,
-      });
-      return;
-    }
     dispatch(updateRestaurantDetailsAPI(formData));
     onClose();
   };
@@ -114,46 +104,6 @@ function EditDetails({ element }) {
                     />
                   </FormControl>
                 </Flex>
-                {/* <Flex gap={5}>
-                  <FormControl id="genre">
-                    <FormLabel>Genre</FormLabel>
-                    <Select
-                      name="genre"
-                      value={formData.genre}
-                      placeholder="Choose Genre"
-                      size="md"
-                      onChange={handleOnChange}
-                      required
-                    >
-                      <option value="Action">Action</option>
-                      <option value="Comedy">Comedy</option>
-                      <option value="Horror">Horror</option>
-                      <option value="Year">Year</option>
-                    </Select>
-                  </FormControl>
-                  <FormControl id="rating">
-                    <FormLabel>IMDB_Rating</FormLabel>
-                    <Input
-                      type="number"
-                      name="IMDB_Rating"
-                      value={formData.IMDB_Rating}
-                      onChange={handleOnChange}
-                      placeholder="Enter IMDB_Rating"
-                      required
-                    />
-                  </FormControl>
-                </Flex> */}
-                <FormControl id="ticket">
-                  <FormLabel>Rating</FormLabel>
-                  <Input
-                    type="number"
-                    name="ticket"
-                    value={formData.ticket}
-                    onChange={handleOnChange}
-                    placeholder="Enter Rating"
-                    required
-                  />
-                </FormControl>
               </Stack>
             </ModalBody>
 

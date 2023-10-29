@@ -61,69 +61,10 @@ const Restaurant = () => {
     const handleOnSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
-        // if (formData.genre == "") {
-        //     toast({
-        //         title: "Please select Restaurant type",
-        //         status: "warning",
-        //         position: "top-center",
-        //         duration: 2000,
-        //         isClosable: true,
-        //     });
-        //     return;
-        // }
         dispatch(addRestaurantDetailsAPI(formData));
     };
     return (
         <Flex>
-            {/* <Box pt={"50px"}>
-
-                <Grid
-                    templateColumns="repeat(2, 1fr)"
-                    gap={6}
-                    maxW="container.lg"
-                    m={"auto"}
-                    mt={"10"}
-                >
-                    {data &&
-                        data.length > 0 &&
-                        data.map((el, i) => (
-                            <GridItem key={i}>
-                                <Flex gap={2}>
-                                    <Box w={"100px"} minW="100px">
-                                        <div>
-                                            <Image src={el.poster} width={"200px"} />
-                                        </div>
-                                    </Box>
-                                    <Box>
-                                        <Heading as={"h3"}>{el.title}</Heading>
-                                        <Divider />
-                                        <Flex>
-                                            <Box minWidth={"90px"}>Directed by:</Box>
-                                            <Box>{el.director}</Box>
-                                        </Flex>
-                                        <Flex>
-                                            <Box minWidth={"90px"}>Year:</Box>
-                                            <Box> {el.year}</Box>
-                                        </Flex>
-                                        <Flex>
-                                            <Box minWidth={"90px"}>Fenre:</Box>
-                                            <Box>{el.genre}</Box>
-                                        </Flex>
-                                        <Flex>
-                                            <Box minWidth={"90px"}>IMDB Rating:</Box>
-                                            <Box>{el.IMDB_Rating}</Box>
-                                        </Flex>
-                                        <Flex>
-                                            <Box minWidth={"90px"}>Cost:</Box>
-                                            <Box>{el.ticket}</Box>
-                                        </Flex>
-                                        <Button colorScheme={"whatsapp"}>Book Now</Button>
-                                    </Box>
-                                </Flex>
-                            </GridItem>
-                        ))}
-                </Grid>
-            </Box> */}
             <MovieTable/>
             <Flex
                 align={"center"}
@@ -191,35 +132,6 @@ const Restaurant = () => {
                                         />
                                     </FormControl>
                                 </Flex>
-                                {/* <Flex gap={5}>
-                                    <FormControl id="genre">
-                                        <FormLabel>Genre</FormLabel>
-                                        <Select
-                                            name="genre"
-                                            value={formData.genre}
-                                            placeholder="Choose Genre"
-                                            size="md"
-                                            onChange={handleOnChange}
-                                            required
-                                        >
-                                            <option value="Action">Action</option>
-                                            <option value="Comedy">Comedy</option>
-                                            <option value="Horror">Horror</option>
-                                            <option value="Year">Year</option>
-                                        </Select>
-                                    </FormControl>
-                                    <FormControl id="rating">
-                                        <FormLabel>IMDB_Rating</FormLabel>
-                                        <Input
-                                            type="number"
-                                            name="IMDB_Rating"
-                                            value={formData.IMDB_Rating}
-                                            onChange={handleOnChange}
-                                            placeholder="Enter IMDB_Rating"
-                                            required
-                                        />
-                                    </FormControl>
-                                </Flex> */}
                                 <FormControl id="ticket">
                                     <FormLabel>Rating</FormLabel>
                                     <Input

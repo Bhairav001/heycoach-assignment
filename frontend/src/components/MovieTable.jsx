@@ -2,6 +2,7 @@ import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
 import {
     Box,
     Button,
+    Image,
     Table,
     TableContainer,
     Tbody,
@@ -50,10 +51,10 @@ const MovieTable = () => {
           <Thead>
             <Tr>
               <Th>Id</Th>
+               <Th>Image</Th>
               <Th>Restaurant Name</Th>
               <Th>Address</Th>
               <Th>Contact Details</Th>
-              <Th>Rating</Th>
               <Th>Edit</Th>
               <Th>Delete</Th>
             </Tr>
@@ -64,11 +65,10 @@ const MovieTable = () => {
               data.map((el, i) => (
                 <Tr _hover={{ background: "gray.100" }} key={i}>
                   <Td>{el.id}</Td>
+                   <Image src={el.poster} width={"50%"}/>
                   <Td>{el.title}</Td>
                   <Td>{el.director}</Td>
                   <Td>{el.year}</Td>
-                  <Td>{el.genre}</Td>
-                  <Td>{el.IMDB_Rating}</Td>
                    <Td>
                     <EditDetails element={el} />
                   </Td> 

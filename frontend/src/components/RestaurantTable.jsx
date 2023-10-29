@@ -18,7 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteRestaurantDetailsAPI, getRestaurantDetailsAPI } from "../store/action";
 import EditDetails from "./EditDetails";
 
-const MovieTable = () => {
+const RestaurantTable = () => {
   const {
     data,
     movie: { loading, error },
@@ -90,4 +90,4 @@ const MovieTable = () => {
   );
 };
 
-export default MovieTable;
+export default RestaurantTable;

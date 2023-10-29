@@ -21,7 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getRestaurantDetailsAPI } from "../store/action";
 import { useNavigate } from "react-router";
 import { addRestaurantDetailsAPI } from "../store/action";
-import MovieTable from "../components/MovieTable";
+import RestaurantTable from "../components/RestaurantTable";
 const initialData = {
     poster: "",
     title: "",
@@ -65,7 +65,7 @@ const Restaurant = () => {
     };
     return (
         <Flex>
-            <MovieTable/>
+            <RestaurantTable/>
             <Flex
                 align={"center"}
                 justify={"center"}
@@ -132,18 +132,6 @@ const Restaurant = () => {
                                         />
                                     </FormControl>
                                 </Flex>
-                                <FormControl id="ticket">
-                                    <FormLabel>Rating</FormLabel>
-                                    <Input
-                                        type="number"
-                                        name="ticket"
-                                        value={formData.ticket}
-                                        onChange={handleOnChange}
-                                        placeholder="Enter rating"
-                                        required
-                                    />
-                                </FormControl>
-
                                 <Stack spacing={10}>
                                     <Button
                                         isLoading={loading}

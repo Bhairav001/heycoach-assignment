@@ -21,6 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getRestaurantDetailsAPI } from "../store/action";
 import { useNavigate } from "react-router";
 import { addRestaurantDetailsAPI } from "../store/action";
+import MovieTable from "../components/MovieTable";
 const initialData = {
     poster: "",
     title: "",
@@ -60,21 +61,21 @@ const Restaurant = () => {
     const handleOnSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
-        if (formData.genre == "") {
-            toast({
-                title: "Please select Restaurant type",
-                status: "warning",
-                position: "top-center",
-                duration: 2000,
-                isClosable: true,
-            });
-            return;
-        }
+        // if (formData.genre == "") {
+        //     toast({
+        //         title: "Please select Restaurant type",
+        //         status: "warning",
+        //         position: "top-center",
+        //         duration: 2000,
+        //         isClosable: true,
+        //     });
+        //     return;
+        // }
         dispatch(addRestaurantDetailsAPI(formData));
     };
     return (
         <Flex>
-            <Box pt={"50px"}>
+            {/* <Box pt={"50px"}>
 
                 <Grid
                     templateColumns="repeat(2, 1fr)"
@@ -122,7 +123,8 @@ const Restaurant = () => {
                             </GridItem>
                         ))}
                 </Grid>
-            </Box>
+            </Box> */}
+            <MovieTable/>
             <Flex
                 align={"center"}
                 justify={"center"}
@@ -143,53 +145,53 @@ const Restaurant = () => {
                             <Stack spacing={4}>
                                 <Flex gap={5}>
                                     <FormControl id="image_url">
-                                        <FormLabel>Poster Image</FormLabel>
+                                        <FormLabel>Restaurant Image</FormLabel>
                                         <Input
                                             type="url"
                                             name="poster"
                                             value={formData.poster}
                                             onChange={handleOnChange}
-                                            placeholder="Enter Poster Image"
+                                            placeholder="Enter Restaurant Image"
                                             required
                                         />
                                     </FormControl>
                                     <FormControl id="title">
-                                        <FormLabel>Restaurant Title</FormLabel>
+                                        <FormLabel>Restaurant Name</FormLabel>
                                         <Input
                                             type="text"
                                             name="title"
                                             value={formData.title}
                                             onChange={handleOnChange}
-                                            placeholder="Enter title"
+                                            placeholder="Enter Restaurant Name"
                                             required
                                         />
                                     </FormControl>
                                 </Flex>
                                 <Flex gap={5}>
                                     <FormControl id="director">
-                                        <FormLabel>Director</FormLabel>
+                                        <FormLabel>Address</FormLabel>
                                         <Input
                                             type="text"
                                             name="director"
                                             value={formData.director}
                                             onChange={handleOnChange}
-                                            placeholder="Enter Director"
+                                            placeholder="Enter Address"
                                             required
                                         />
                                     </FormControl>
                                     <FormControl id="year">
-                                        <FormLabel>Year</FormLabel>
+                                        <FormLabel>Contact Details</FormLabel>
                                         <Input
                                             type="number"
                                             name="year"
                                             value={formData.year}
                                             onChange={handleOnChange}
-                                            placeholder="Enter year"
+                                            placeholder="Enter Contact"
                                             required
                                         />
                                     </FormControl>
                                 </Flex>
-                                <Flex gap={5}>
+                                {/* <Flex gap={5}>
                                     <FormControl id="genre">
                                         <FormLabel>Genre</FormLabel>
                                         <Select
@@ -217,15 +219,15 @@ const Restaurant = () => {
                                             required
                                         />
                                     </FormControl>
-                                </Flex>
+                                </Flex> */}
                                 <FormControl id="ticket">
-                                    <FormLabel>Ticket Cost</FormLabel>
+                                    <FormLabel>Rating</FormLabel>
                                     <Input
                                         type="number"
                                         name="ticket"
                                         value={formData.ticket}
                                         onChange={handleOnChange}
-                                        placeholder="Enter ticket"
+                                        placeholder="Enter rating"
                                         required
                                     />
                                 </FormControl>

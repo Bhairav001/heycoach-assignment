@@ -32,7 +32,7 @@ const getRestaurantDetailsError = (payload) => {
 const getRestaurantDetailsAPI = (payload) => (dispatch) => {
     dispatch(getRestaurantDetailsLoading(payload));
     axios
-      .get(`https://mock-server-eight-app-data.onrender.com/Restaurants`)
+      .get(`https://mock-server-eight-app-data.onrender.com/movies`)
       .then((r) => dispatch(getRestaurantDetailsSuccess(r.data)))
       .catch((e) => dispatch(getRestaurantDetailsError(e.data)));
   };
@@ -61,7 +61,7 @@ const getRestaurantDetailsAPI = (payload) => (dispatch) => {
   const addRestaurantDetailsAPI = (payload) => (dispatch) => {
     dispatch(addRestaurantDetailsLoading(payload));
     axios
-      .post(`https://mock-server-eight-app-data.onrender.com/Restaurants`, payload)
+      .post(`https://mock-server-eight-app-data.onrender.com/movies`, payload)
       .then((r) => {
         dispatch(addRestaurantDetailsSuccess(r.data));
       })
@@ -94,7 +94,7 @@ const getRestaurantDetailsAPI = (payload) => (dispatch) => {
     dispatch(updateRestaurantDetailsLoading(payload));
     axios
       .patch(
-        `https://mock-server-eight-app-data.onrender.com/Restaurants/${payload.id}`,
+        `https://mock-server-eight-app-data.onrender.com/movies/${payload.id}`,
         payload
       )
       .then((r) => {
@@ -129,7 +129,7 @@ const getRestaurantDetailsAPI = (payload) => (dispatch) => {
   const deleteRestaurantDetailsAPI = (payload) => (dispatch) => {
     dispatch(deleteRestaurantDetailsLoading(payload));
     axios
-      .delete(`https://mock-server-eight-app-data.onrender.com/Restaurants/${payload}`)
+      .delete(`https://mock-server-eight-app-data.onrender.com/movies/${payload}`)
       .then((r) => {
         dispatch(deleteRestaurantDetailsSuccess(r.data));
       })
